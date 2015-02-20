@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:screenOrientation="portrait"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context="ume_studios.example.com.hirakana.MainActivity"
+    android:background="@drawable/mainbg"
+    android:gravity="center">
+
+    <ImageButton
+        android:id="@+id/btnInstructions"
+        android:layout_width="315dip"
+        android:layout_height="75dip"
+        android:src="@drawable/instructions"
+        android:layout_above="@+id/btnHira"
+        android:onClick="toInstructions"
+        android:scaleType="matrix"
+        android:layout_marginTop="55dip" />
+
+    <ImageButton
+        android:id="@+id/btnHira"
+        android:layout_width="315dip"
+        android:layout_height="105dip"
+        android:src="@drawable/hiragana"
+        android:onClick="toHiragana"
+        android:layout_above="@+id/btnKata"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:id="@+id/btnKata"
+        android:layout_width="315dip"
+        android:layout_height="105dip"
+        android:src="@drawable/katakana"
+        android:onClick="toKatakana"
+        android:layout_above="@+id/btnHirakana"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:id="@+id/btnHirakana"
+        android:layout_width="315dip"
+        android:layout_height="105dip"
+        android:src="@drawable/hirakana"
+        android:onClick="toHirakana"
+        android:layout_centerHorizontal="true" />
+
+</LinearLayout>

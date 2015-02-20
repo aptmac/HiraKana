@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ume_studios.example.com.hirakana"
+    android:versionCode="2"
+    android:versionName="1.1">
+
+    <supports-screens
+        android:smallScreens="false"
+        android:normalScreens="true"
+        android:largeScreens="true"
+        android:xlargeScreens="false">
+    </supports-screens>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".Splash"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main" >
+        </activity>
+        <activity
+            android:name=".InstructionActivity"
+            android:label="@string/title_activity_instruction"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ume_studios.example.com.hirakana.MainActivity" />
+        </activity>
+        <activity
+            android:name=".HiraganaActivity"
+            android:label="@string/title_activity_hiragana"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ume_studios.example.com.hirakana.MainActivity" />
+        </activity>
+        <activity
+            android:name=".KatakanaActivity"
+            android:label="@string/title_activity_katakana"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ume_studios.example.com.hirakana.MainActivity" />
+        </activity>
+        <activity
+            android:name=".HirakanaActivity"
+            android:label="@string/title_activity_hirakana"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ume_studios.example.com.hirakana.MainActivity" />
+        </activity>
+    </application>
+
+</manifest>
