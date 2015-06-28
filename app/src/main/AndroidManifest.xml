@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ume_studios.example.com.hirakana"
-    android:versionCode="2"
-    android:versionName="1.1">
+    android:versionCode="4"
+    android:versionName="1.2">
 
     <supports-screens
         android:smallScreens="false"
         android:normalScreens="true"
         android:largeScreens="true"
-        android:xlargeScreens="false">
+        android:xlargeScreens="true">
     </supports-screens>
+
+    <uses-permission android:name="android.permission.VIBRATE"/>
 
     <application
         android:allowBackup="true"

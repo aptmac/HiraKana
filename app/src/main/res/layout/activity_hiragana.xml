@@ -1,406 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:screenOrientation="portrait"
     android:layout_width="match_parent"
-    android:layout_height="fill_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:layout_height="match_parent"
     android:background="@drawable/hirabg">
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="33dp"
-        android:layout_height="50dp"
-        android:text="q"
-        android:onClick="clickBtnQ"
-        android:id="@+id/btnQ"
-        android:layout_marginBottom="160dp"
-        android:layout_alignParentBottom="true"
-        android:maxHeight="3dp" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="33dp"
-        android:layout_height="50dp"
-        android:text="w"
-        android:onClick="clickBtnW"
-        android:id="@+id/btnW"
-        android:maxHeight="3dp"
-        android:layout_alignBottom="@+id/btnQ"
-        android:layout_toRightOf="@+id/btnQ"
-        android:layout_toEndOf="@+id/btnQ" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="33dp"
-        android:layout_height="50dp"
-        android:text="e"
-        android:onClick="clickBtnE"
-        android:id="@+id/btnE"
-        android:maxHeight="3dp"
-        android:layout_alignBottom="@+id/btnW"
-        android:layout_toRightOf="@+id/btnW"
-        android:layout_toEndOf="@+id/btnW" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="33dp"
-        android:layout_height="50dp"
-        android:text="r"
-        android:onClick="clickBtnR"
-        android:id="@+id/btnR"
-        android:maxHeight="3dp"
-        android:layout_alignTop="@+id/btnE"
-        android:layout_toRightOf="@+id/btnE"
-        android:layout_toEndOf="@+id/btnE" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="33dp"
-        android:layout_height="50dp"
-        android:text="t"
-        android:onClick="clickBtnT"
-        android:id="@+id/btnT"
-        android:maxHeight="3dp"
-        android:layout_alignBottom="@+id/btnR"
-        android:layout_toRightOf="@+id/btnR"
-        android:layout_toEndOf="@+id/btnR" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="33dp"
-        android:layout_height="50dp"
-        android:text="y"
-        android:onClick="clickBtnY"
-        android:id="@+id/btnY"
-        android:maxHeight="3dp"
-        android:layout_alignBottom="@+id/btnT"
-        android:layout_toRightOf="@+id/btnT"
-        android:layout_toEndOf="@+id/btnT" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="33dp"
-        android:layout_height="50dp"
-        android:text="u"
-        android:onClick="clickBtnU"
-        android:id="@+id/btnU"
-        android:maxHeight="3dp"
-        android:layout_toEndOf="@+id/btnY"
-        android:layout_alignTop="@+id/btnY"
-        android:layout_toRightOf="@+id/btnY" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="33dp"
-        android:layout_height="50dp"
-        android:text="i"
-        android:onClick="clickBtnI"
-        android:id="@+id/btnI"
-        android:maxHeight="3dp"
-        android:layout_toEndOf="@+id/btnU"
-        android:layout_alignTop="@+id/btnU"
-        android:layout_toRightOf="@+id/btnU" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="33dp"
-        android:layout_height="50dp"
-        android:text="o"
-        android:onClick="clickBtnO"
-        android:id="@+id/btnO"
-        android:maxHeight="3dp"
-        android:layout_alignBottom="@+id/btnI"
-        android:layout_toRightOf="@+id/btnI"
-        android:layout_toEndOf="@+id/btnI" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="33dp"
-        android:layout_height="50dp"
-        android:text="p"
-        android:onClick="clickBtnP"
-        android:id="@+id/btnP"
-        android:maxHeight="3dp"
-        android:layout_alignBottom="@+id/btnO"
-        android:layout_toRightOf="@+id/btnO"
-        android:layout_toEndOf="@+id/btnO" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="33dp"
-        android:layout_height="50dp"
-        android:text="a"
-        android:onClick="clickBtnA"
-        android:id="@+id/btnA"
-        android:layout_below="@+id/btnW"
-        android:layout_marginLeft="17dp" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="33dp"
-        android:layout_height="50dp"
-        android:text="s"
-        android:onClick="clickBtnS"
-        android:id="@+id/btnS"
-        android:layout_alignBottom="@+id/btnA"
-        android:layout_toRightOf="@+id/btnA"
-        android:layout_toEndOf="@+id/btnA" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="33dp"
-        android:layout_height="50dp"
-        android:text="d"
-        android:onClick="clickBtnD"
-        android:id="@+id/btnD"
-        android:layout_alignBottom="@+id/btnS"
-        android:layout_toRightOf="@+id/btnS"
-        android:layout_toEndOf="@+id/btnS" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="33dp"
-        android:layout_height="50dp"
-        android:text="f"
-        android:onClick="clickBtnF"
-        android:id="@+id/btnF"
-        android:layout_alignBottom="@+id/btnD"
-        android:layout_toRightOf="@+id/btnD"
-        android:layout_toEndOf="@+id/btnD" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="33dp"
-        android:layout_height="50dp"
-        android:text="g"
-        android:onClick="clickBtnG"
-        android:id="@+id/btnG"
-        android:layout_alignBottom="@+id/btnF"
-        android:layout_toRightOf="@+id/btnF"
-        android:layout_toEndOf="@+id/btnF" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="33dp"
-        android:layout_height="50dp"
-        android:text="h"
-        android:onClick="clickBtnH"
-        android:id="@+id/btnH"
-        android:layout_alignBottom="@+id/btnG"
-        android:layout_toRightOf="@+id/btnG"
-        android:layout_toEndOf="@+id/btnG" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="33dp"
-        android:layout_height="50dp"
-        android:text="j"
-        android:onClick="clickBtnJ"
-        android:id="@+id/btnJ"
-        android:layout_alignBottom="@+id/btnH"
-        android:layout_toRightOf="@+id/btnH"
-        android:layout_toEndOf="@+id/btnH" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="33dp"
-        android:layout_height="50dp"
-        android:text="k"
-        android:onClick="clickBtnK"
-        android:id="@+id/btnK"
-        android:layout_alignBottom="@+id/btnJ"
-        android:layout_toRightOf="@+id/btnJ"
-        android:layout_toEndOf="@+id/btnJ" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="33dp"
-        android:layout_height="50dp"
-        android:enabled="false"
-        android:text="l"
-        android:onClick="clickBtnL"
-        android:id="@+id/btnL"
-        android:layout_alignBottom="@+id/btnK"
-        android:layout_toRightOf="@+id/btnK"
-        android:layout_toEndOf="@+id/btnK" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="33dp"
-        android:layout_height="50dp"
-        android:text="z"
-        android:onClick="clickBtnZ"
-        android:id="@+id/btnZ"
-        android:layout_toStartOf="@+id/btnX"
-        android:layout_below="@+id/btnS"
-        android:layout_toRightOf="@+id/btnA"
-        android:layout_toEndOf="@+id/btnA"
-        android:layout_toLeftOf="@+id/btnX" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="33dp"
-        android:layout_height="50dp"
-        android:enabled="false"
-        android:text="x"
-        android:onClick="clickBtnX"
-        android:id="@+id/btnX"
-        android:layout_alignTop="@+id/btnZ"
-        android:layout_toRightOf="@+id/btnS" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="33dp"
-        android:layout_height="50dp"
-        android:text="c"
-        android:onClick="clickBtnC"
-        android:id="@+id/btnC"
-        android:layout_toEndOf="@+id/btnX"
-        android:layout_alignBottom="@+id/btnX"
-        android:layout_toRightOf="@+id/btnX" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="33dp"
-        android:layout_height="50dp"
-        android:enabled="false"
-        android:text="v"
-        android:onClick="clickBtnV"
-        android:id="@+id/btnV"
-        android:layout_toEndOf="@+id/btnC"
-        android:layout_alignBottom="@+id/btnC"
-        android:layout_toRightOf="@+id/btnC" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="33dp"
-        android:layout_height="50dp"
-        android:text="b"
-        android:onClick="clickBtnB"
-        android:id="@+id/btnB"
-        android:layout_toEndOf="@+id/btnV"
-        android:layout_alignBottom="@+id/btnV"
-        android:layout_toRightOf="@+id/btnV" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="33dp"
-        android:layout_height="50dp"
-        android:text="n"
-        android:onClick="clickBtnN"
-        android:id="@+id/btnN"
-        android:layout_toEndOf="@+id/btnB"
-        android:layout_alignBottom="@+id/btnB"
-        android:layout_toRightOf="@+id/btnB" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="33dp"
-        android:layout_height="50dp"
-        android:text="m"
-        android:onClick="clickBtnM"
-        android:id="@+id/btnM"
-        android:layout_toEndOf="@+id/btnN"
-        android:layout_alignBottom="@+id/btnN"
-        android:layout_toRightOf="@+id/btnN" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:text="Delete"
-        android:onClick="clickBtnDel"
-        android:id="@+id/btnDelete"
-        android:layout_toStartOf="@+id/btnY"
-        android:layout_below="@+id/btnZ"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_toLeftOf="@+id/btnY" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:text="Submit"
-        android:id="@+id/btnSubmit"
-        android:onClick="clickBtnSubmit"
-        android:layout_below="@+id/btnN"
-        android:layout_toEndOf="@+id/btnDelete"
-        android:layout_toRightOf="@+id/btnDelete"
-        android:layout_alignRight="@+id/btnP"/>
-
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/letterOne"
-        android:layout_toStartOf="@+id/btnF"
-        android:src="@drawable/blank"
-        android:layout_toEndOf="@+id/btnQ"
-        android:layout_marginBottom="27dp"
-        android:layout_alignBottom="@+id/btnA"
-        android:layout_toLeftOf="@+id/btnF"
-        android:layout_marginRight="12dp"
-        android:layout_marginLeft="9dp" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/letterTwo"
-        android:layout_toStartOf="@+id/btnJ"
-        android:src="@drawable/blank"
-        android:layout_toEndOf="@+id/letterOne"
-        android:paddingLeft="0dp"
-        android:layout_alignTop="@+id/letterOne"
-        android:layout_toRightOf="@+id/letterOne"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/letterThree"
-        android:layout_toStartOf="@+id/btnL"
-        android:src="@drawable/blank"
-        android:layout_toEndOf="@+id/btnH"
-        android:paddingLeft="0dp"
-        android:layout_alignTop="@+id/letterTwo"
-        android:layout_alignRight="@+id/btnL"
-        android:layout_alignEnd="@+id/btnL"
-        android:layout_toRightOf="@+id/btnH"
-        android:layout_alignParentEnd="false"
-        android:layout_alignParentStart="false"
-        android:layout_marginRight="30dp"
-        android:layout_marginLeft="10dp" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="130dip"
         android:id="@+id/imgFlash"
-        android:src="@drawable/blank"
-        android:layout_toEndOf="@+id/btnR"
-        android:layout_toStartOf="@+id/letterThree"
-        android:layout_marginBottom="62dp"
-        android:layout_above="@+id/btnT"
-        android:layout_toLeftOf="@+id/letterThree" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dip"
+        android:background="@drawable/card"
+        android:paddingBottom="10dp" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imgWrong"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/letterTwo"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/imgFlash"
+        android:background="@drawable/letter"
+        android:paddingBottom="10dp"
+        android:paddingRight="10dp" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/letterThree"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/letterTwo"
+        android:layout_toEndOf="@+id/imgFlash"
+        android:layout_alignBottom="@+id/letterTwo"
+        android:background="@drawable/letter"
+        android:paddingBottom="10dp"
+        android:paddingRight="10dp" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/letterOne"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/letterTwo"
         android:layout_toStartOf="@+id/letterTwo"
-        android:src="@drawable/blank"
-        android:layout_toEndOf="@+id/btnA"
-        android:layout_alignBottom="@+id/imgFlash"
-        android:layout_toLeftOf="@+id/letterTwo" />
+        android:layout_alignBottom="@+id/letterTwo"
+        android:background="@drawable/letter"
+        android:paddingBottom="10dp"
+        android:paddingRight="10dp" />
+
+    <ImageView
+        android:layout_width="75dp"
+        android:layout_height="130dp"
+        android:id="@+id/imgWrong"
+        android:layout_alignLeft="@+id/imgFlash"
+        android:layout_alignStart="@+id/imgFlash"
+        android:layout_alignTop="@+id/imgFlash" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/txtStreak"
+        android:layout_alignTop="@+id/imgFlash"
+        android:layout_alignLeft="@+id/imgFlash"
+        android:layout_alignStart="@+id/imgFlash"
+        android:layout_marginLeft="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/txtWrong"
-        android:layout_above="@+id/letterThree"
-        android:layout_toLeftOf="@+id/btnP"
-        android:layout_toStartOf="@+id/btnP"
-        android:layout_marginBottom="22dp" />
+        android:layout_alignTop="@+id/imgFlash"
+        android:layout_alignRight="@+id/imgFlash"
+        android:layout_alignEnd="@+id/imgFlash"
+        android:layout_marginRight="15dp" />
+
+    <Button
+        android:layout_width="35dp"
+        android:layout_height="50dp"
+        android:text="v"
+        android:id="@+id/btnV"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="60dp"
+        android:enabled="false" />
+
+    <Button
+        android:layout_width="35dp"
+        android:layout_height="50dp"
+        android:text="g"
+        android:id="@+id/btnG"
+        android:onClick="clickBtnG"
+        android:layout_above="@+id/btnV"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="1dp" />
+
+    <Button
+        android:layout_width="165dp"
+        android:layout_height="50dp"
+        android:text="Submit"
+        android:id="@+id/btnSubmit"
+        android:onClick="clickBtnSubmit"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_toRightOf="@+id/txtPlaceholder"
+        android:layout_alignRight="@+id/btnP"
+        android:layout_alignEnd="@+id/btnP" />
+
+    <Button
+        android:layout_width="165dp"
+        android:layout_height="50dp"
+        android:text="Delete"
+        android:id="@+id/btnDelete"
+        android:onClick="clickBtnDel"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_toLeftOf="@+id/txtPlaceholder"
+        android:layout_alignLeft="@+id/btnQ"
+        android:layout_alignStart="@+id/btnQ" />
+
+    <Button
+        android:layout_width="35dp"
+        android:layout_height="50dp"
+        android:text="b"
+        android:id="@+id/btnB"
+        android:onClick="clickBtnB"
+        android:layout_alignBottom="@+id/btnV"
+        android:layout_alignParentStart="false"
+        android:layout_toEndOf="@+id/btnV" />
+
+    <Button
+        android:layout_width="35dp"
+        android:layout_height="50dp"
+        android:text="n"
+        android:id="@+id/btnN"
+        android:onClick="clickBtnN"
+        android:layout_alignBottom="@+id/btnB"
+        android:layout_toEndOf="@+id/btnB" />
+
+    <Button
+        android:layout_width="35dp"
+        android:layout_height="50dp"
+        android:text="m"
+        android:id="@+id/btnM"
+        android:onClick="clickBtnM"
+        android:layout_alignBottom="@+id/btnN"
+        android:layout_toEndOf="@+id/btnN"
+        android:textSize="16dp" />
+
+    <Button
+        android:layout_width="35dp"
+        android:layout_height="50dp"
+        android:text="c"
+        android:id="@+id/btnC"
+        android:onClick="clickBtnC"
+        android:layout_alignBottom="@+id/btnV"
+        android:layout_toStartOf="@+id/btnV" />
+
+    <Button
+        android:layout_width="35dp"
+        android:layout_height="50dp"
+        android:text="x"
+        android:id="@+id/btnX"
+        android:layout_alignBottom="@+id/btnC"
+        android:layout_toStartOf="@+id/btnC"
+        android:enabled="false" />
+
+    <Button
+        android:layout_width="35dp"
+        android:layout_height="50dp"
+        android:text="z"
+        android:id="@+id/btnZ"
+        android:onClick="clickBtnZ"
+        android:layout_alignBottom="@+id/btnX"
+        android:layout_toStartOf="@+id/btnX" />
+
+    <Button
+        android:layout_width="35dp"
+        android:layout_height="50dp"
+        android:text="h"
+        android:id="@+id/btnH"
+        android:onClick="clickBtnH"
+        android:layout_alignBottom="@+id/btnG"
+        android:layout_toEndOf="@+id/btnG" />
+
+    <Button
+        android:layout_width="35dp"
+        android:layout_height="50dp"
+        android:text="j"
+        android:id="@+id/btnJ"
+        android:onClick="clickBtnJ"
+        android:layout_alignBottom="@+id/btnH"
+        android:layout_toEndOf="@+id/btnH" />
+
+    <Button
+        android:layout_width="35dp"
+        android:layout_height="50dp"
+        android:text="k"
+        android:id="@+id/btnK"
+        android:onClick="clickBtnK"
+        android:layout_toEndOf="@+id/btnJ"
+        android:layout_alignBottom="@+id/btnJ" />
+
+    <Button
+        android:layout_width="35dp"
+        android:layout_height="50dp"
+        android:text="l"
+        android:id="@+id/btnL"
+        android:layout_alignBottom="@+id/btnK"
+        android:layout_toEndOf="@+id/btnK"
+        android:enabled="false" />
+
+    <Button
+        android:layout_width="35dp"
+        android:layout_height="50dp"
+        android:text="f"
+        android:id="@+id/btnF"
+        android:onClick="clickBtnF"
+        android:layout_alignBottom="@+id/btnG"
+        android:layout_toStartOf="@+id/btnG"
+        android:enabled="true" />
+
+    <Button
+        android:layout_width="35dp"
+        android:layout_height="50dp"
+        android:text="d"
+        android:id="@+id/btnD"
+        android:onClick="clickBtnD"
+        android:layout_alignBottom="@+id/btnF"
+        android:layout_toStartOf="@+id/btnF" />
+
+    <Button
+        android:layout_width="35dp"
+        android:layout_height="50dp"
+        android:text="s"
+        android:id="@+id/btnS"
+        android:onClick="clickBtnS"
+        android:layout_alignBottom="@+id/btnD"
+        android:layout_toStartOf="@+id/btnD" />
+
+    <Button
+        android:layout_width="35dp"
+        android:layout_height="50dp"
+        android:text="a"
+        android:id="@+id/btnA"
+        android:onClick="clickBtnA"
+        android:layout_alignBottom="@+id/btnS"
+        android:layout_toStartOf="@+id/btnS" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:id="@+id/txtPlaceholder"
+        android:layout_above="@+id/btnG"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentLeft="false"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="35dp"
+        android:layout_height="50dp"
+        android:text="y"
+        android:id="@+id/btnY"
+        android:onClick="clickBtnY"
+        android:layout_alignBottom="@+id/txtPlaceholder"
+        android:layout_toEndOf="@id/txtPlaceholder"
+        android:layout_alignParentStart="false" />
+
+    <Button
+        android:layout_width="35dp"
+        android:layout_height="50dp"
+        android:text="u"
+        android:id="@+id/btnU"
+        android:onClick="clickBtnU"
+        android:layout_toEndOf="@+id/btnY"
+        android:layout_alignBottom="@+id/btnY" />
+
+    <Button
+        android:layout_width="35dp"
+        android:layout_height="50dp"
+        android:text="i"
+        android:id="@+id/btnI"
+        android:onClick="clickBtnI"
+        android:layout_toEndOf="@+id/btnU"
+        android:layout_alignBottom="@+id/btnU" />
+
+    <Button
+        android:layout_width="35dp"
+        android:layout_height="50dp"
+        android:text="o"
+        android:id="@+id/btnO"
+        android:onClick="clickBtnO"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentEnd="false"
+        android:layout_toEndOf="@id/btnI"
+        android:layout_alignBottom="@+id/btnI" />
+
+    <Button
+        android:layout_width="35dp"
+        android:layout_height="50dp"
+        android:text="p"
+        android:id="@+id/btnP"
+        android:onClick="clickBtnP"
+        android:layout_toEndOf="@+id/btnO"
+        android:layout_alignBottom="@+id/btnO" />
+
+    <Button
+        android:layout_width="35dp"
+        android:layout_height="50dp"
+        android:text="t"
+        android:id="@+id/btnT"
+        android:onClick="clickBtnT"
+        android:layout_toStartOf="@id/txtPlaceholder"
+        android:layout_alignBottom="@+id/txtPlaceholder" />
+
+    <Button
+        android:layout_width="35dp"
+        android:layout_height="50dp"
+        android:text="r"
+        android:id="@+id/btnR"
+        android:onClick="clickBtnR"
+        android:layout_toStartOf="@+id/btnT"
+        android:layout_alignBottom="@+id/btnT" />
+
+    <Button
+        android:layout_width="35dp"
+        android:layout_height="50dp"
+        android:text="e"
+        android:id="@+id/btnE"
+        android:onClick="clickBtnE"
+        android:layout_toStartOf="@+id/btnR"
+        android:layout_alignBottom="@+id/btnR" />
+
+    <Button
+        android:layout_width="35dp"
+        android:layout_height="50dp"
+        android:text="w"
+        android:id="@+id/btnW"
+        android:onClick="clickBtnW"
+        android:layout_toStartOf="@+id/btnE"
+        android:layout_alignBottom="@+id/btnE" />
+
+    <Button
+        android:layout_width="35dp"
+        android:layout_height="50dp"
+        android:text="q"
+        android:id="@+id/btnQ"
+        android:layout_toStartOf="@+id/btnW"
+        android:layout_alignBottom="@+id/btnW"
+        android:enabled="false" />
 
 </RelativeLayout>

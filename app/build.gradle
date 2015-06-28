@@ -8,8 +8,8 @@ android {
         applicationId "ume_studios.example.com.hirakana"
         minSdkVersion 15
         targetSdkVersion 20
-        versionCode 3
-        versionName "1.1"
+        versionCode 4
+        versionName "1.3"
     }
     buildTypes {
         release {
