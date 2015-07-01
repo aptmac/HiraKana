@@ -2,14 +2,17 @@ package ume_studios.example.com.hirakana;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import java.util.Random;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
@@ -48,13 +51,83 @@ public class KatakanaActivity extends Activity{
             case R.id.action_difficulty:
                 changeDifficulty();
                 return true;
-            case R.id.action_settings:
+            case R.id.action_vibration:
+                changeVibration();
+                return true;
+            case R.id.action_showTable:
+                showTable();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
+    /**
+     * Method to show the katakana cheat table
+     */
+    public void showTable(){
+        //Create the alert builder, and set the view to the dialog XML file
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = KatakanaActivity.this.getLayoutInflater();
+        View v = inflater.inflate(R.layout.katatable_dialog,null);
 
+        //Set the view into the builder
+        builder.setView(v);
+
+        //Confirm Button
+        builder.setPositiveButton("Done",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    /**
+     * Method to turn vibration on or off depending on the outcome of the radiobuttons pressed
+     */
+    public void changeVibration(){
+        //Create the alert builder, and set the view to the dialog XML file
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = KatakanaActivity.this.getLayoutInflater();
+        View v = inflater.inflate(R.layout.vibrate_dialog,null);
+
+        //Set the view into the builder, and set the title for the dialog
+        builder.setView(v);
+        builder.setTitle("Vibration Options");
+
+        //Confirm Button
+        builder.setPositiveButton("Confirm",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    /**
+     * Method to allow the toggling of vibration within the activity
+     */
+    public void onVibrationButtonClicked(View view){
+        boolean checked = ((RadioButton) view).isChecked();
+        switch(view.getId()){
+            case R.id.vibrationOn:
+                if (checked)
+                    //Turn vibration on
+                    setVibration(true);
+                break;
+            case R.id.vibrationOff:
+                if (checked)
+                    //Turn vibration off
+                    setVibration(false);
+                break;
+        }
+    }
     /**
      * Method to run the dialog box for changing the game difficulty
      */
@@ -140,8 +213,14 @@ public class KatakanaActivity extends Activity{
     //Int to hold the current difficulty level 1 - 15
     private int difficulty;
 
+    //Boolean to hold true if vibraiton is on
+    private boolean vibration = true;
+
     //Int to hold the highest character value for the selected difficulty
     private int high = 71;
+
+    //int to hold the current streak
+    private int streak;
 
     //Array to hold the text for the different difficulty levels
     private String[] levels = {
@@ -163,18 +242,21 @@ public class KatakanaActivity extends Activity{
     };
 
     /**
-     * setter method for the difficulty level
+     * setter and setter methods for the difficulty level
      */
     public void setDifficulty(int progress){
         this.difficulty = progress;
     }
-
-    /**
-     * getter method for the difficulty level
-     */
     public int getDifficulty(){
         return difficulty;
     }
+
+    /**
+     * setter and getter methods for the vibration option
+     */
+    public void setVibration(boolean vibration){this.vibration = vibration;}
+    public boolean getVibration(){return vibration;}
+
 
     /**
      * setter method to set the selected key
@@ -574,65 +656,90 @@ public class KatakanaActivity extends Activity{
      * Methods for responding to button hits
      * Each method associated with a button in the activity layout file
      */
+    public void vibrate(){
+        boolean vibration = getVibration();
+        if (vibration){
+            Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+            v.vibrate(20);
+        }else{
+            Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+            v.vibrate(0);
+        }
+    }
     public void clickBtnA(View v){
+        vibrate();
         setKey("a");
         drawLetter();
     }
     public void clickBtnB(View v){
+        vibrate();
         setKey("b");
         drawLetter();
     }
     public void clickBtnC(View v) {
+        vibrate();
         setKey("c");
         drawLetter();
     }
     public void clickBtnD(View v){
+        vibrate();
         setKey("d");
         drawLetter();
     }
     public void clickBtnE(View v){
+        vibrate();
         setKey("e");
         drawLetter();
     }
     public void clickBtnF(View v){
+        vibrate();
         setKey("f");
         drawLetter();
     }
     public void clickBtnG(View v){
+        vibrate();
         setKey("g");
         drawLetter();
     }
     public void clickBtnH(View v){
+        vibrate();
         setKey("h");
         drawLetter();
     }
     public void clickBtnI(View v){
+        vibrate();
         setKey("i");
         drawLetter();
     }
     public void clickBtnJ(View v){
+        vibrate();
         setKey("j");
         drawLetter();
     }
     public void clickBtnK(View v){
+        vibrate();
         setKey("k");
         drawLetter();
     }
     public void clickBtnL(View v){
     }
     public void clickBtnM(View v){
+        vibrate();
         setKey("m");
         drawLetter();
     }
     public void clickBtnN(View v){
+        vibrate();
         setKey("n");
         drawLetter();
     }
     public void clickBtnO(View v){
+        vibrate();
         setKey("o");
         drawLetter();
     }
     public void clickBtnP(View v){
+        vibrate();
         setKey("p");
         drawLetter();
     }
@@ -640,34 +747,41 @@ public class KatakanaActivity extends Activity{
         setKey("q");
     }
     public void clickBtnR(View v){
+        vibrate();
         setKey("r");
         drawLetter();
     }
     public void clickBtnS(View v){
+        vibrate();
         setKey("s");
         drawLetter();
     }
     public void clickBtnT(View v){
+        vibrate();
         setKey("t");
         drawLetter();
     }
     public void clickBtnU(View v){
+        vibrate();
         setKey("u");
         drawLetter();
     }
     public void clickBtnV(View v){
     }
     public void clickBtnW(View v){
+        vibrate();
         setKey("w");
         drawLetter();
     }
     public void clickBtnX(View v){
     }
     public void clickBtnY(View v){
+        vibrate();
         setKey("y");
         drawLetter();
     }
     public void clickBtnZ(View v){
+        vibrate();
         setKey("z");
         drawLetter();
     }
@@ -676,6 +790,7 @@ public class KatakanaActivity extends Activity{
      * Method to control what happens when the delete button is selected
      */
     public void clickBtnDel(View v){
+        vibrate();
         setKey("delete");
         if (i > 3){
             i = 3;
@@ -706,6 +821,7 @@ public class KatakanaActivity extends Activity{
      * Method to control what happens when the submit button is selected
      */
     public void clickBtnSubmit(View v){
+        vibrate();
         setKey("submit");
 
         //Loop through the array, and use string buffer to create a string of letters
@@ -716,6 +832,7 @@ public class KatakanaActivity extends Activity{
         String joinedLetters = result.toString();
         TextView txtWrong = (TextView)findViewById(R.id.txtWrong);
         ImageView wrong = (ImageView) findViewById(R.id.imgWrong);
+        TextView txtStreak = (TextView)findViewById(R.id.txtStreak);
         //if the word was correct
         if (joinedLetters.equals(flash)) {
             i = 0;
@@ -733,12 +850,22 @@ public class KatakanaActivity extends Activity{
             //Clears the x sign
             wrong.setImageResource(R.drawable.blank);
             txtWrong.setText("");
+
+            //Show the current streak
+            streak++;
+            //if the user got the answer wrong, don't give a point for correcting mistake
+            if (numWrong > 0){
+                streak = 0;
+            }
+            txtStreak.setText("Streak: " + streak);
+
             //Draw a new card
             newCard();
         }else{
             //Draws a red x
             wrong.setImageResource(R.drawable.x);
             numWrong++;
+            streak = 0;
             //if the answer is wrong three times, show the correct answer
             if (numWrong == 3){
                 txtWrong.setText("Answer: "+flash);

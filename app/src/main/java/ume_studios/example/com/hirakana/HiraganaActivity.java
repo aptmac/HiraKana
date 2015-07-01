@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,8 +12,11 @@ import android.view.View;
 import java.util.Random;
 import android.widget.ImageView;
 import android.widget.SeekBar;
+import android.widget.RadioButton;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
+import android.os.Vibrator;
+import android.content.Context;
 
 /*****************
  * Class Breakdown
@@ -48,10 +52,81 @@ public class HiraganaActivity extends Activity{
             case R.id.action_difficulty:
                 changeDifficulty();
                 return true;
-            case R.id.action_settings:
+            case R.id.action_vibration:
+                changeVibration();
+                return true;
+            case R.id.action_showTable:
+                showTable();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
+        }
+    }
+    /**
+     * Method to show the hiragana cheat table
+     */
+    public void showTable(){
+        //Create the alert builder, and set the view to the dialog XML file
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = HiraganaActivity.this.getLayoutInflater();
+        View v = inflater.inflate(R.layout.hiratable_dialog,null);
+
+        //Set the view into the builder
+        builder.setView(v);
+
+        //Confirm Button
+        builder.setPositiveButton("Done",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    /**
+     * Method to turn vibration on or off depending on the outcome of the radiobuttons pressed
+     */
+    public void changeVibration(){
+        //Create the alert builder, and set the view to the dialog XML file
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = HiraganaActivity.this.getLayoutInflater();
+        View v = inflater.inflate(R.layout.vibrate_dialog,null);
+
+        //Set the view into the builder, and set the title for the dialog
+        builder.setView(v);
+        builder.setTitle("Vibration Options");
+
+        //Confirm Button
+        builder.setPositiveButton("Confirm",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    /**
+     * Method to allow the toggling of vibration within the activity
+     */
+    public void onVibrationButtonClicked(View view){
+        boolean checked = ((RadioButton) view).isChecked();
+        switch(view.getId()){
+            case R.id.vibrationOn:
+                if (checked)
+                    //Turn vibration on
+                    setVibration(true);
+                break;
+            case R.id.vibrationOff:
+                if (checked)
+                    //Turn vibration off
+                    setVibration(false);
+                break;
         }
     }
 
@@ -140,6 +215,9 @@ public class HiraganaActivity extends Activity{
     //Int to hold the current difficulty level 1 - 15
     private int difficulty;
 
+    //Boolean to hold true if vibration is on
+    private boolean vibration = true;
+
     //Int to hold the highest character value for the selected difficulty
     private int high = 71;
 
@@ -166,18 +244,20 @@ public class HiraganaActivity extends Activity{
     };
 
     /**
-     * setter method for the difficulty level
+     * setter and setter methods for the difficulty level
      */
     public void setDifficulty(int progress){
         this.difficulty = progress;
     }
-
-    /**
-     * getter method for the difficulty level
-     */
     public int getDifficulty(){
         return difficulty;
     }
+
+    /**
+     * setter and getter methods for the vibration option
+     */
+    public void setVibration(boolean vibration){this.vibration = vibration;}
+    public boolean getVibration(){return vibration;}
 
     /**
      * setter method to set the selected key
@@ -577,100 +657,124 @@ public class HiraganaActivity extends Activity{
      * Methods for responding to button hits
      * Each method associated with a button in the activity layout file
      */
+    public void vibrate(){
+        boolean vibration = getVibration();
+        if (vibration){
+            Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+            v.vibrate(20);
+        }else{
+            Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+            v.vibrate(0);
+        }
+    }
     public void clickBtnA(View v){
+        vibrate();
         setKey("a");
         drawLetter();
     }
     public void clickBtnB(View v){
+        vibrate();
         setKey("b");
         drawLetter();
     }
     public void clickBtnC(View v) {
+        vibrate();
         setKey("c");
         drawLetter();
     }
     public void clickBtnD(View v){
+        vibrate();
         setKey("d");
         drawLetter();
     }
     public void clickBtnE(View v){
+        vibrate();
         setKey("e");
         drawLetter();
     }
     public void clickBtnF(View v){
+        vibrate();
         setKey("f");
         drawLetter();
     }
     public void clickBtnG(View v){
+        vibrate();
         setKey("g");
         drawLetter();
     }
     public void clickBtnH(View v){
+        vibrate();
         setKey("h");
         drawLetter();
     }
     public void clickBtnI(View v){
+        vibrate();
         setKey("i");
         drawLetter();
     }
     public void clickBtnJ(View v){
+        vibrate();
         setKey("j");
         drawLetter();
     }
     public void clickBtnK(View v){
+        vibrate();
         setKey("k");
         drawLetter();
     }
-    public void clickBtnL(View v){
-    }
     public void clickBtnM(View v){
+        vibrate();
         setKey("m");
         drawLetter();
     }
     public void clickBtnN(View v){
+        vibrate();
         setKey("n");
         drawLetter();
     }
     public void clickBtnO(View v){
+        vibrate();
         setKey("o");
         drawLetter();
     }
     public void clickBtnP(View v){
+        vibrate();
         setKey("p");
         drawLetter();
     }
-    public void clickBtnQ(View v){
-        setKey("q");
-    }
+
     public void clickBtnR(View v){
+        vibrate();
         setKey("r");
         drawLetter();
     }
     public void clickBtnS(View v){
+        vibrate();
         setKey("s");
         drawLetter();
     }
     public void clickBtnT(View v){
+        vibrate();
         setKey("t");
         drawLetter();
     }
     public void clickBtnU(View v){
+        vibrate();
         setKey("u");
         drawLetter();
     }
-    public void clickBtnV(View v){
-    }
     public void clickBtnW(View v){
+        vibrate();
         setKey("w");
         drawLetter();
     }
-    public void clickBtnX(View v){
-    }
     public void clickBtnY(View v){
+        vibrate();
         setKey("y");
         drawLetter();
     }
     public void clickBtnZ(View v){
+        vibrate();
         setKey("z");
         drawLetter();
     }
@@ -680,6 +784,7 @@ public class HiraganaActivity extends Activity{
      */
     public void clickBtnDel(View v){
         setKey("delete");
+        vibrate();
         if (i > 3){
             i = 3;
         }
@@ -710,6 +815,7 @@ public class HiraganaActivity extends Activity{
      */
     public void clickBtnSubmit(View v){
         setKey("submit");
+        vibrate();
 
         //Loop through the array, and use string buffer to create a string of letters
         StringBuffer result = new StringBuffer();
@@ -741,7 +847,7 @@ public class HiraganaActivity extends Activity{
             //Show the current streak
             streak++;
             //if the user got the answer wrong, don't give a point for correcting mistake
-            if (numWrong > 1){
+            if (numWrong > 0){
                 streak = 0;
             }
             txtStreak.setText("Streak: " + streak);

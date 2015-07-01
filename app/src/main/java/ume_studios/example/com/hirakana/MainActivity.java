@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.os.Vibrator;
+import android.content.Context;
 
 
 public class MainActivity extends Activity {
@@ -17,23 +19,38 @@ public class MainActivity extends Activity {
         setTitle("HiraKana - Main Menu");
     }
 
+    //Vibrate Method
+    //Causes button presses to vibrate for 25ms
+    public void vibrate(){
+        Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        v.vibrate(25);
+    }
+
+    //Launches the Instructions activity
     public void toInstructions(View view){
         Intent intent = new Intent(this, InstructionActivity.class);
+        vibrate();
         startActivity(intent);
     }
 
+    //Launches the Hiragana activity
     public void toHiragana(View view){
         Intent intent = new Intent(this, HiraganaActivity.class);
+        vibrate();
         startActivity(intent);
     }
 
+    //Launches the Katakana activity
     public void toKatakana(View view){
         Intent intent = new Intent(this, KatakanaActivity.class);
+        vibrate();
         startActivity(intent);
     }
 
+    //Launches the HiraKana activity
     public void toHirakana(View view){
         Intent intent = new Intent(this, HirakanaActivity.class);
+        vibrate();
         startActivity(intent);
     }
 
@@ -50,9 +67,6 @@ public class MainActivity extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
         return super.onOptionsItemSelected(item);
     }
 }

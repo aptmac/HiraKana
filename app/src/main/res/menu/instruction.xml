@@ -1,8 +1,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="ume_studios.example.com.hirakana.InstructionActivity" >
-    <item android:id="@+id/action_settings"
-        android:title="@string/action_settings"
-        android:orderInCategory="100"
-        android:showAsAction="never" />
+    tools:context="ume_studios.example.com.hirakana.InstructionActivity">
+
+    <item android:id="@+id/action_showHiraTable"
+        android:title="Tables"
+        android:icon="@drawable/icon_hira_tables"
+        android:showAsAction="always|withText"/>
+
+    <item android:id="@+id/action_showKataTable"
+        android:title="Tables"
+        android:icon="@drawable/icon_kata_tables"
+        android:showAsAction="always|withText"/>
+
+    <item android:id="@+id/action_showHirakanaTable"
+        android:title="Tables"
+        android:icon="@drawable/icon_hirakana_tables"
+        android:showAsAction="always|withText"/>
 </menu>

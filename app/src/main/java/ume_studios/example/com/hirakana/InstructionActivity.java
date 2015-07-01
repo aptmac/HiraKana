@@ -1,9 +1,13 @@
 package ume_studios.example.com.hirakana;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 
 
@@ -28,13 +32,77 @@ public class InstructionActivity extends Activity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
+        // Handle presses on the action bar items
+        switch (item.getItemId()) {
+            case R.id.action_showHiraTable:
+                showHiraTable();
+                return true;
+            case R.id.action_showKataTable:
+                showKataTable();
+                return true;
+            case R.id.action_showHirakanaTable:
+                showHirakanaTable();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * Methods to show the cheat tables
+     */
+    public void showHiraTable(){
+        //Create the alert builder, and set the view to the dialog XML file
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = InstructionActivity.this.getLayoutInflater();
+        View v = inflater.inflate(R.layout.hiratable_dialog,null);
+        //Set the view into the builder
+        builder.setView(v);
+        //Confirm Button
+        builder.setPositiveButton("Done",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+    public void showKataTable(){
+        //Create the alert builder, and set the view to the dialog XML file
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = InstructionActivity.this.getLayoutInflater();
+        View v = inflater.inflate(R.layout.katatable_dialog,null);
+        //Set the view into the builder
+        builder.setView(v);
+        //Confirm Button
+        builder.setPositiveButton("Done",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+    public void showHirakanaTable(){
+        //Create the alert builder, and set the view to the dialog XML file
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = InstructionActivity.this.getLayoutInflater();
+        View v = inflater.inflate(R.layout.hirakanatable_dialog,null);
+        //Set the view into the builder
+        builder.setView(v);
+        //Confirm Button
+        builder.setPositiveButton("Done",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }
