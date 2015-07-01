@@ -12,8 +12,8 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="70dip"
-        android:background="@drawable/card"
-        android:paddingBottom="10dp" />
+        android:src="@drawable/hira_ka"
+        android:background="@drawable/card" />
 
     <ImageView
         android:layout_width="100dp"
@@ -21,6 +21,7 @@
         android:id="@+id/letterTwo"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
+        android:src="@drawable/eng_a"
         android:layout_below="@+id/imgFlash"
         android:background="@drawable/letter"
         android:paddingBottom="10dp"
@@ -33,6 +34,7 @@
         android:layout_centerVertical="true"
         android:layout_toRightOf="@+id/letterTwo"
         android:layout_toEndOf="@+id/imgFlash"
+        android:src="@drawable/eng_e"
         android:layout_alignBottom="@+id/letterTwo"
         android:background="@drawable/letter"
         android:paddingBottom="10dp"
@@ -45,27 +47,11 @@
         android:layout_centerVertical="true"
         android:layout_toLeftOf="@+id/letterTwo"
         android:layout_toStartOf="@+id/letterTwo"
+        android:src="@drawable/eng_k"
         android:layout_alignBottom="@+id/letterTwo"
         android:background="@drawable/letter"
         android:paddingBottom="10dp"
         android:paddingRight="10dp" />
-
-    <ImageView
-        android:layout_width="75dp"
-        android:layout_height="130dp"
-        android:id="@+id/imgWrong"
-        android:layout_alignLeft="@+id/imgFlash"
-        android:layout_alignStart="@+id/imgFlash"
-        android:layout_alignTop="@+id/imgFlash" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtStreak"
-        android:layout_alignTop="@+id/imgFlash"
-        android:layout_alignLeft="@+id/imgFlash"
-        android:layout_alignStart="@+id/imgFlash"
-        android:layout_marginLeft="5dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -74,7 +60,8 @@
         android:layout_alignTop="@+id/imgFlash"
         android:layout_alignRight="@+id/imgFlash"
         android:layout_alignEnd="@+id/imgFlash"
-        android:layout_marginRight="15dp" />
+        android:layout_marginRight="15dp"
+        android:text="Wrong: Ka" />
 
     <Button
         android:layout_width="35dp"
@@ -350,5 +337,24 @@
         android:layout_toStartOf="@+id/btnW"
         android:layout_alignBottom="@+id/btnW"
         android:enabled="false" />
+
+    <ImageView
+        android:layout_width="75dp"
+        android:layout_height="130dp"
+        android:id="@+id/imgWrong"
+        android:layout_alignLeft="@+id/imgFlash"
+        android:layout_alignStart="@+id/imgFlash"
+        android:src="@drawable/x"
+        android:layout_alignTop="@+id/imgFlash" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Streak: 1"
+        android:id="@+id/txtStreak"
+        android:layout_alignTop="@+id/imgFlash"
+        android:layout_alignLeft="@+id/imgFlash"
+        android:layout_alignStart="@+id/imgFlash"
+        android:layout_marginLeft="5dp" />
 
 </RelativeLayout>

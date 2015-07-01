@@ -6,7 +6,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/hirakanabg">
+    android:background="@drawable/hirabg">
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -402,5 +402,13 @@
         android:layout_toLeftOf="@+id/btnP"
         android:layout_toStartOf="@+id/btnP"
         android:layout_marginBottom="22dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtStreak"
+        android:layout_alignTop="@+id/txtWrong"
+        android:layout_toLeftOf="@+id/txtWrong"
+        android:layout_toStartOf="@+id/txtWrong" />
 
 </RelativeLayout>
