@@ -143,6 +143,9 @@ public class KatakanaActivity extends Activity{
     //Int to hold the highest character value for the selected difficulty
     private int high = 71;
 
+    //int to hold the current streak
+    private int streak;
+
     //Array to hold the text for the different difficulty levels
     private String[] levels = {
             "All Characters",
@@ -716,6 +719,7 @@ public class KatakanaActivity extends Activity{
         String joinedLetters = result.toString();
         TextView txtWrong = (TextView)findViewById(R.id.txtWrong);
         ImageView wrong = (ImageView) findViewById(R.id.imgWrong);
+        TextView txtStreak = (TextView)findViewById(R.id.txtStreak);
         //if the word was correct
         if (joinedLetters.equals(flash)) {
             i = 0;
@@ -733,12 +737,22 @@ public class KatakanaActivity extends Activity{
             //Clears the x sign
             wrong.setImageResource(R.drawable.blank);
             txtWrong.setText("");
+
+            //Show the current streak
+            streak++;
+            //if the user got the answer wrong, don't give a point for correcting mistake
+            if (numWrong > 0){
+                streak = 0;
+            }
+            txtStreak.setText("Streak: " + streak);
+
             //Draw a new card
             newCard();
         }else{
             //Draws a red x
             wrong.setImageResource(R.drawable.x);
             numWrong++;
+            streak = 0;
             //if the answer is wrong three times, show the correct answer
             if (numWrong == 3){
                 txtWrong.setText("Answer: "+flash);

@@ -2,8 +2,10 @@ package ume_studios.example.com.hirakana;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
+import android.os.Vibrator;
 
 /*****************
  * Class Breakdown
@@ -577,101 +580,120 @@ public class HiraganaActivity extends Activity{
      * Methods for responding to button hits
      * Each method associated with a button in the activity layout file
      */
+    public void vibrate(){
+        Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        v.vibrate(15);
+        Log.d("Test", "Vibrate");
+    }
     public void clickBtnA(View v){
         setKey("a");
+        vibrate();
         drawLetter();
     }
     public void clickBtnB(View v){
         setKey("b");
+        vibrate();
         drawLetter();
     }
     public void clickBtnC(View v) {
         setKey("c");
+        vibrate();
         drawLetter();
     }
     public void clickBtnD(View v){
         setKey("d");
+        vibrate();
         drawLetter();
     }
     public void clickBtnE(View v){
         setKey("e");
+        vibrate();
         drawLetter();
     }
     public void clickBtnF(View v){
         setKey("f");
+        vibrate();
         drawLetter();
     }
     public void clickBtnG(View v){
         setKey("g");
+        vibrate();
         drawLetter();
     }
     public void clickBtnH(View v){
         setKey("h");
+        vibrate();
         drawLetter();
     }
     public void clickBtnI(View v){
         setKey("i");
+        vibrate();
         drawLetter();
     }
     public void clickBtnJ(View v){
         setKey("j");
+        vibrate();
         drawLetter();
     }
     public void clickBtnK(View v){
         setKey("k");
+        vibrate();
         drawLetter();
-    }
-    public void clickBtnL(View v){
     }
     public void clickBtnM(View v){
         setKey("m");
+        vibrate();
         drawLetter();
     }
     public void clickBtnN(View v){
         setKey("n");
+        vibrate();
         drawLetter();
     }
     public void clickBtnO(View v){
         setKey("o");
+        vibrate();
         drawLetter();
     }
     public void clickBtnP(View v){
         setKey("p");
+        vibrate();
         drawLetter();
     }
-    public void clickBtnQ(View v){
-        setKey("q");
-    }
+
     public void clickBtnR(View v){
         setKey("r");
+        vibrate();
         drawLetter();
     }
     public void clickBtnS(View v){
         setKey("s");
+        vibrate();
         drawLetter();
     }
     public void clickBtnT(View v){
         setKey("t");
+        vibrate();
         drawLetter();
     }
     public void clickBtnU(View v){
         setKey("u");
+        vibrate();
         drawLetter();
-    }
-    public void clickBtnV(View v){
     }
     public void clickBtnW(View v){
         setKey("w");
+        vibrate();
         drawLetter();
-    }
-    public void clickBtnX(View v){
     }
     public void clickBtnY(View v){
         setKey("y");
+        vibrate();
         drawLetter();
     }
     public void clickBtnZ(View v){
         setKey("z");
+        vibrate();
         drawLetter();
     }
 
@@ -680,6 +702,7 @@ public class HiraganaActivity extends Activity{
      */
     public void clickBtnDel(View v){
         setKey("delete");
+        vibrate();
         if (i > 3){
             i = 3;
         }
@@ -710,6 +733,7 @@ public class HiraganaActivity extends Activity{
      */
     public void clickBtnSubmit(View v){
         setKey("submit");
+        vibrate();
 
         //Loop through the array, and use string buffer to create a string of letters
         StringBuffer result = new StringBuffer();
@@ -741,7 +765,7 @@ public class HiraganaActivity extends Activity{
             //Show the current streak
             streak++;
             //if the user got the answer wrong, don't give a point for correcting mistake
-            if (numWrong > 1){
+            if (numWrong > 0){
                 streak = 0;
             }
             txtStreak.setText("Streak: " + streak);

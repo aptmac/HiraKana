@@ -3,7 +3,7 @@
     android:screenOrientation="portrait"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/hkbg">
+    android:background="@drawable/hirabg">
 
     <ImageView
         android:layout_width="300dp"
@@ -146,16 +146,17 @@
         android:id="@+id/btnM"
         android:onClick="clickBtnM"
         android:layout_alignBottom="@+id/btnN"
-        android:layout_toEndOf="@+id/btnN" />
+        android:layout_toEndOf="@+id/btnN"
+        android:textSize="16dp" />
 
     <Button
         android:layout_width="35dp"
         android:layout_height="50dp"
         android:text="c"
         android:id="@+id/btnC"
+        android:onClick="clickBtnC"
         android:layout_alignBottom="@+id/btnV"
-        android:layout_toStartOf="@+id/btnV"
-        android:enabled="false" />
+        android:layout_toStartOf="@+id/btnV" />
 
     <Button
         android:layout_width="35dp"
