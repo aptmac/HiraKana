@@ -8,6 +8,10 @@ This is an android application that continuously feeds you flashcards. I created
 
 Please visit the google play store page here for more information: https://play.google.com/store/apps/details?id=ume_studios.example.com.hirakana&hl=en
 
+**New in version 1.31 (June 2015)**
+
+-Fixed the cheat sheets (they were missing a row of characters)
+
 **New in version 1.30 (June 2015)**
 
 -Added vibration to button clicks
